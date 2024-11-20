@@ -12,19 +12,12 @@ const WeatherList = ({ forecast, onSearch }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		
+
 		if (inputValue.trim()) {
 			onSearch(inputValue.trim());
 			setInputValue('');
 		}
 	};
-
-	const days = forecast.reduce((acc, item) => {
-		const date = item.dt_txt.split(' ')[0];
-		if (!acc[date]) acc[date] = [];
-		acc[date].push(item);
-		return acc;
-	}, {});
 
 	return (
 		<div>
@@ -33,19 +26,23 @@ const WeatherList = ({ forecast, onSearch }) => {
 					name="city"
 					placeholder="Introduce una ciudad"
 					value={inputValue}
-					onChange={(e) => setInputValue(e.target.value)}
+					onChange={
+						(event) => {
+							setInputValue(event.target.value)
+						}
+					}
 				/>
 				<button type="submit">Buscar</button>
 			</form>
+
 			<div className="weather-list">
-				{
-				Object.entries(days).map(([date, weatherData]) => (
-					<div key={uuidv4()} className="weather-day">
-						<h2>{date}</h2>
-						<WeatherItems weatherData={weatherData} />
+			{
+				forecast.map(item => (
+					<div className="weather-cards" key={uuidv4()}>
+						<WeatherItems wtData={item} />
 					</div>
 				))
-				}
+			}
 			</div>
 		</div>
 	);
