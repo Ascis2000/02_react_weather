@@ -1,0 +1,122 @@
+
+body {
+    font-family: Arial, sans-serif;
+    width:100%;
+    margin: 0px;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.boxMain {
+    width:100%;
+    padding: 0;
+    margin: 0px auto;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+    color: #333;
+}
+
+.titSearch{
+    text-align:center;
+}
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[name="city"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.weather-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-day {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+.weather-day h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #555;
+}
+
+.weather-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.weather-card {
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    background: #d3e2ea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card:hover {
+    background: #c1e2b5;
+    box-shadow: 0 4px 8px rgba(19, 130, 38, 0.15);
+}
+
+.weather-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.weather-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.weather-card img {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+}
